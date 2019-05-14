@@ -1,0 +1,19 @@
+{
+  "name": "weight-calculator",
+  "version": "1.0.0",
+  "description": "A simple web page to convert weight in different units.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "dev": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harshPPatel/weight-calculator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harshPPatel/weight-calculator/issues"
+  },
+  "homepage": "https://github.com/harshPPatel/weight-calculator#readme"
+}
