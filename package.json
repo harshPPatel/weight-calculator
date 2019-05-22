@@ -15,5 +15,14 @@
   "bugs": {
     "url": "https://github.com/harshPPatel/weight-calculator/issues"
   },
-  "homepage": "https://github.com/harshPPatel/weight-calculator#readme"
+  "homepage": "https://github.com/harshPPatel/weight-calculator#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-uglify": "^3.0.2"
+  }
 }
