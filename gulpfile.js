@@ -14,6 +14,9 @@ const javaScriptDestination = './public/js/';
 // Deveopment Process - JavaScript Task
 function appJS(cb) {
   return src(javaScriptSource)
+    .pipe(rename({
+      extname: '.min.js',
+    }))
     .pipe(dest(javaScriptDestination));
   cb();
 }
@@ -34,6 +37,5 @@ function compressJavaScript(cb) {
 }
 
 // Exporting Tasks
-exports.watch = series(something, nothing);
 exports.build = series(compressJavaScript);
 exports.default = series(appJS);
