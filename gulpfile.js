@@ -7,16 +7,19 @@ const babel = require('gulp-babel');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
-
 sass.compiler = require('node-sass');
 
 // Source Paths
 const javaScriptSource = './source/js/*.js';
+const vendorJavaScriptSource = './source/js/vendors/*.js';
 const sassSource = './source/sass/**/*.scss';
+const vendorCssSource = './source/css';
 
 // Dewstination Paths
 const javaScriptDestination = './public/js/';
+const vendorJavaScriptDestination = './public/js/vendors/';
 const sassDestination = './public/css/';
+const vendorCssDestination = './public/css/vendors/';
 
 // Deveopment Process - JavaScript Task
 function javaScriptDevlopmentBuild(cb) {
@@ -44,6 +47,14 @@ function javaScriptProductionBuild(cb) {
   cb();
 }
 
+// Vendor JavaScript Task
+function vendorJavaScript(cb) {
+  return src(vendorJavaScriptSource)
+    .pipe(dest(vendorJavaScriptDestination));
+  cb();
+}
+
+// Development Process - Sass
 function sassDevelopmentBuild(cb) {
   return src(sassSource)
     .pipe(sass().on('error', sass.logError))
@@ -54,6 +65,7 @@ function sassDevelopmentBuild(cb) {
   cb();
 }
 
+// Production Process - Sass
 function sassProductionBuild(cb) {
   return src(sassSource)
     .pipe(sass().on('error', sass.logError))
@@ -70,6 +82,13 @@ function sassProductionBuild(cb) {
   cb();
 }
 
+// Vendor Css Task
+function vendorCss(cb) {
+  return src(vendorCssSource)
+    .pipe(dest(vendorCssDestination));
+  cb();
+}
+
 // Exporting Tasks
-exports.build = series(javaScriptProductionBuild, sassProductionBuild);
-exports.default = series(javaScriptDevlopmentBuild, sassDevelopmentBuild);
+exports.build = series(javaScriptProductionBuild, sassProductionBuild, vendorCss, vendorJavaScript);
+exports.default = series(javaScriptDevlopmentBuild, sassDevelopmentBuild, vendorCss, vendorJavaScript);
