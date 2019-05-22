@@ -14,6 +14,7 @@ const javaScriptDestination = './public/js/';
 // Deveopment Process - JavaScript Task
 function appJS(cb) {
   return src(javaScriptSource)
+    .pipe(concat('app.js'))
     .pipe(rename({
       extname: '.min.js',
     }))
