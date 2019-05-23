@@ -130,4 +130,4 @@ exports.default = series(javaScriptDevlopmentBuild, sassDevelopmentBuild, vendor
 exports.build = series(javaScriptProductionBuild, sassProductionBuild, vendorCss, vendorJavaScript, favicon);
 
 // Watch Task
-exports.watch = watchTask;
+exports.watch = series(javaScriptDevlopmentBuild, sassDevelopmentBuild, vendorCss, vendorJavaScript, watchTask);
