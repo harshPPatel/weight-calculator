@@ -7,6 +7,7 @@ const babel = require('gulp-babel');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
+const htmlmin = require('gulp-htmlmin');
 const browserSync = require('browser-sync');
 sass.compiler = require('node-sass');
 
@@ -16,6 +17,7 @@ const vendorJavaScriptSource = './source/js/vendors/*.js';
 const sassSource = './source/sass/**/*.scss';
 const vendorCssSource = './source/css/*.css';
 const faviconSource = './source/favicon/*';
+const htmlSource = './source/*.html';
 
 // Dewstination Paths
 const javaScriptDestination = './public/js/';
@@ -23,6 +25,28 @@ const vendorJavaScriptDestination = './public/js/vendors/';
 const sassDestination = './public/css/';
 const vendorCssDestination = './public/css/vendors/';
 const faviconDestination = './public/';
+const htmlDestination = './public/';
+
+// Development Build - HTML task
+function htmlDevelopmentBuild(cb) {
+  return src(htmlSource)
+    .pipe(dest(htmlDestination));
+  cb();
+}
+
+// Production Build - HTML task
+function htmlProductionBuild(cb) {
+  return src(htmlSource)
+  .pipe(htmlmin({
+    collapseWhitespace: true,
+    minifyCSS: true,
+    minifyJS: true,
+    minifyURLs: true,
+    collapseInlineTagWhitespace: true,
+  }))
+    .pipe(dest(htmlDestination));
+  cb();
+}
 
 // Deveopment Process - JavaScript Task
 function javaScriptDevlopmentBuild(cb) {
@@ -107,6 +131,7 @@ function watchTask() {
     },
     notify: false,
   });
+  watch(htmlSource, htmlDevelopmentBuild);
   watch(sassSource, sassDevelopmentBuild);
   watch(javaScriptSource, javaScriptDevlopmentBuild);
   watch(vendorJavaScriptSource, vendorJavaScript);
@@ -124,10 +149,10 @@ function watchTask() {
 // Exporting Tasks
 
 // Default Task
-exports.default = series(javaScriptDevlopmentBuild, sassDevelopmentBuild, vendorCss, vendorJavaScript, favicon);
+exports.default = series(htmlDevelopmentBuild, javaScriptDevlopmentBuild, sassDevelopmentBuild, vendorCss, vendorJavaScript, favicon);
 
 // Production Build Task
-exports.build = series(javaScriptProductionBuild, sassProductionBuild, vendorCss, vendorJavaScript, favicon);
+exports.build = series(htmlProductionBuild, javaScriptProductionBuild, sassProductionBuild, vendorCss, vendorJavaScript, favicon);
 
 // Watch Task
-exports.watch = series(javaScriptDevlopmentBuild, sassDevelopmentBuild, vendorCss, vendorJavaScript, watchTask);
+exports.watch = series(htmlDevelopmentBuild, javaScriptDevlopmentBuild, sassDevelopmentBuild, vendorCss, vendorJavaScript, watchTask);
