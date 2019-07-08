@@ -1,0 +1,48 @@
+.squares {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &_single {
+    height: 50px;
+    width: 50px;
+    border-radius: 25%;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 0;
+    top: 10px;
+
+    &:last-of-type {
+      right: -1.1rem;
+    }
+  }
+
+  &_yellow {
+    background-color: $primary-yellow;
+  }
+
+  &_blue {
+    background-color: $primary-blue;
+  }
+
+  &_background {
+    display: block;
+    position: fixed;
+    z-index: -100;
+    right: 100px;
+    bottom: 400px;
+    opacity: 0.3;
+
+    .squares_single {
+      height: 500px;
+      width: 500px;
+      border: 1rem solid white;
+
+      &:last-of-type {
+        right: -150px;
+      }
+    }
+
+  }
+}

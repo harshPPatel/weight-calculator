@@ -1,25 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <!-- Meta tags -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description" content="A simple weight calculator. Converts values in three different units.">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,900&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="./css/app.min.css">
+
+  <!-- Title -->
   <title>Weight Calculator</title>
 </head>
+
 <body>
+  <!-- Header Starts -->
   <header>
     <div class="logo">
       <div class="squares">
         <div class="squares_single squares_yellow"></div>
         <div class="squares_single squares_blue"></div>
       </div>
-      Weight Calculator
+      <p>Weight Calculator</p>
     </div>
   </header>
+  <!-- Header Ends -->
 
+  <!-- Main Starts -->
   <main>
+    <div class="squares squares_background">
+      <div class="squares_single squares_yellow"></div>
+      <div class="squares_single squares_blue"></div>
+    </div>
     <div class="wrapper">
       <div class="from_box">
         <h2>From</h2>
@@ -45,30 +62,34 @@
         </form>
       </div>
       <div class="to_box">
-          <h2>To</h2>
-          <form action="#">
-            <fieldset id="to_unit_options">
-              <div class="form_group">
-                <input type="radio" name="to_units" value="gram" id="gram_to_input">
-                <label for="gram_to_input">gram</label>
-              </div>
-              <div class="form_group">
-                <input type="radio" name="to_units" value="kg" id="kg_to_input" checked>
-                <label for="kg_to_input">kg</label>
-              </div>
-              <div class="form_group">
-                <input type="radio" name="to_units" value="oz" id="oz_to_input">
-                <label for="oz_to_input">Oz</label>
-              </div>
-            </fieldset>
-            
-            <div class="form_input">
-              <input type="number" name="to_input" id="to_input">
+        <h2>To</h2>
+        <form action="#">
+          <fieldset id="to_unit_options">
+            <div class="form_group">
+              <input type="radio" name="to_units" value="gram" id="gram_to_input">
+              <label for="gram_to_input">gram</label>
             </div>
-          </form>
-        </div>
+            <div class="form_group">
+              <input type="radio" name="to_units" value="kg" id="kg_to_input" checked>
+              <label for="kg_to_input">kg</label>
+            </div>
+            <div class="form_group">
+              <input type="radio" name="to_units" value="oz" id="oz_to_input">
+              <label for="oz_to_input">Oz</label>
+            </div>
+          </fieldset>
+
+          <div class="form_input">
+            <input type="number" name="to_input" id="to_input">
+          </div>
+        </form>
+      </div>
     </div>
   </main>
+  <!-- Main Ends -->
+
+  <!-- Scripts -->
   <script src="./js/app.min.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,28 @@
+header {
+  padding: 20px 0;
+
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: default;
+
+    .squares {
+      height: 70px;
+      z-index: 1;
+
+      &_single {
+        border: 5px solid white;
+      }
+    }
+
+    p {
+      line-height: 70px;
+      z-index: 10;
+      font-weight: bolder;
+      font-size: 20px;
+      margin-left: -10px;
+    }
+  }
+}

@@ -118,3 +118,80 @@ summary {
 
 template, [hidden] {
   display: none; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html,
+body {
+  font-size: 16px; }
+
+body {
+  font-family: "Muli", sans-serif;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  z-index: 100; }
+
+header,
+main {
+  max-width: 1120px;
+  width: 95%;
+  margin: 0 auto;
+  position: relative; }
+
+header {
+  padding: 20px 0; }
+  header .logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: default; }
+    header .logo .squares {
+      height: 70px;
+      z-index: 1; }
+      header .logo .squares_single {
+        border: 5px solid white; }
+    header .logo p {
+      line-height: 70px;
+      z-index: 10;
+      font-weight: bolder;
+      font-size: 20px;
+      margin-left: -10px; }
+
+.squares {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; }
+  .squares_single {
+    height: 50px;
+    width: 50px;
+    border-radius: 25%;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 0;
+    top: 10px; }
+    .squares_single:last-of-type {
+      right: -1.1rem; }
+  .squares_yellow {
+    background-color: #FFDB5B; }
+  .squares_blue {
+    background-color: #33ECEF; }
+  .squares_background {
+    display: block;
+    position: fixed;
+    z-index: -100;
+    right: 100px;
+    bottom: 400px;
+    opacity: 0.3; }
+    .squares_background .squares_single {
+      height: 500px;
+      width: 500px;
+      border: 1rem solid white; }
+      .squares_background .squares_single:last-of-type {
+        right: -150px; }
