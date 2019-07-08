@@ -30,14 +30,15 @@
     display: block;
     position: fixed;
     z-index: -100;
-    right: 100px;
-    bottom: 400px;
-    opacity: 0.3;
+    right: 150px;
+    bottom: 425px;
 
     .squares_single {
       height: 500px;
       width: 500px;
-      border: 1rem solid white;
+      border: 14px solid white;
+      opacity: 0.3;
+      border-radius: 10%;
 
       &:last-of-type {
         right: -150px;

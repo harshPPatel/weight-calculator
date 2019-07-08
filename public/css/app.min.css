@@ -143,6 +143,17 @@ main {
   margin: 0 auto;
   position: relative; }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0; }
+
+h2 {
+  margin: 80px 0;
+  font-size: 38px; }
+
 header {
   padding: 20px 0; }
   header .logo {
@@ -162,6 +173,15 @@ header {
       font-weight: bolder;
       font-size: 20px;
       margin-left: -10px; }
+
+main .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around; }
+
+main .from_box,
+main .to_box {
+  text-align: center; }
 
 .squares {
   display: flex;
@@ -186,12 +206,60 @@ header {
     display: block;
     position: fixed;
     z-index: -100;
-    right: 100px;
-    bottom: 400px;
-    opacity: 0.3; }
+    right: 150px;
+    bottom: 425px; }
     .squares_background .squares_single {
       height: 500px;
       width: 500px;
-      border: 1rem solid white; }
+      border: 14px solid white;
+      opacity: 0.3;
+      border-radius: 10%; }
       .squares_background .squares_single:last-of-type {
         right: -150px; }
+
+form input[type="radio"] {
+  display: none; }
+
+form input[type="number"] {
+  text-align: center;
+  margin-top: 80px;
+  height: 60px;
+  width: 150px;
+  font-size: 38px;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  border: 2px solid #2E2E2E;
+  border-radius: 3px;
+  margin-bottom: 10px; }
+  form input[type="number"]:focus {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16); }
+
+form .unit_options {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  form .unit_options#unit_options__from .form_group:not(:last-of-type), form .unit_options#unit_options__to .form_group:not(:last-of-type) {
+    margin-right: 40px; }
+  form .unit_options#unit_options__from label:hover, form .unit_options#unit_options__to label:hover {
+    opacity: 0.5; }
+  form .unit_options#unit_options__from input[type="radio"]:checked + label, form .unit_options#unit_options__to input[type="radio"]:checked + label {
+    border-color: white;
+    color: white; }
+  form .unit_options#unit_options__from input[type="radio"]:checked + label {
+    background-color: #10CBCE; }
+  form .unit_options#unit_options__to input[type="radio"]:checked + label {
+    background-color: #FFC806; }
+
+form label {
+  display: block;
+  height: 75px;
+  width: 75px;
+  line-height: 69px;
+  color: #2E2E2E;
+  border: 3px solid #2E2E2E;
+  border-radius: 100%;
+  font-weight: bolder;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease; }

@@ -41,7 +41,7 @@
       <div class="from_box">
         <h2>From</h2>
         <form action="#">
-          <fieldset id="from_unit_options">
+          <div id="unit_options__from" class="unit_options">
             <div class="form_group">
               <input type="radio" name="from_units" value="gram" id="gram_from_input" checked>
               <label for="gram_from_input">gram</label>
@@ -54,17 +54,17 @@
               <input type="radio" name="from_units" value="oz" id="oz_from_input">
               <label for="oz_from_input">Oz</label>
             </div>
-          </fieldset>
+          </div>
 
           <div class="form_input">
-            <input type="number" name="from_input" id="from_input">
+            <input type="number" name="from_input" id="from_input" autofocus tabindex="1">
           </div>
         </form>
       </div>
       <div class="to_box">
         <h2>To</h2>
         <form action="#">
-          <fieldset id="to_unit_options">
+          <div id="unit_options__to" class="unit_options">
             <div class="form_group">
               <input type="radio" name="to_units" value="gram" id="gram_to_input">
               <label for="gram_to_input">gram</label>
@@ -77,10 +77,10 @@
               <input type="radio" name="to_units" value="oz" id="oz_to_input">
               <label for="oz_to_input">Oz</label>
             </div>
-          </fieldset>
+          </div>
 
           <div class="form_input">
-            <input type="number" name="to_input" id="to_input">
+            <input type="number" name="to_input" id="to_input" tabindex="2">
           </div>
         </form>
       </div>

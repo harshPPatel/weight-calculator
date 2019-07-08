@@ -1,0 +1,12 @@
+main {
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .from_box,
+  .to_box {
+    text-align: center;
+  }
+}
