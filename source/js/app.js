@@ -3,22 +3,26 @@ const toForm = document.getElementById('--js-to-form');
 const fromInput = document.getElementById('from_input');
 const toInput = document.getElementById('to_input');
 
+// Units
 const Units = {
   GRAM: 'gram',
   KG: 'kg',
   OZ: 'oz'
 };
 
+// Forms
 const Forms = {
   INPUT: '',
   OUTPUT: ''
 };
 
+// Input/Output Units
 const Unit = {
   INPUT: '',
   OUTPUT: ''
 };
 
+// Returns selected unit of From Form
 const getFromUnit = () => {
   const radios = fromForm.elements['from_units'];
   let unit;
@@ -39,6 +43,7 @@ const getFromUnit = () => {
   return unit;
 };
 
+// Returns unit of To Form
 const getToUnit = () => {
   const radios = toForm.elements['to_units'];
   let unit;
@@ -59,6 +64,7 @@ const getToUnit = () => {
   return unit;
 };
 
+// Sets the units according to the user input to the Unit object
 const setUnits = e => {
   const input = e.target;
   if (input.getAttribute('name') == 'from_input') {
@@ -74,6 +80,7 @@ const setUnits = e => {
   }
 };
 
+// Updates the units
 const updateUnits = (e, form) => {
   if (form == fromForm) {
     Forms.INPUT = 'from';
@@ -88,12 +95,14 @@ const updateUnits = (e, form) => {
   }
 }
 
+// Returns the weight
 const getWeight = () => {
   const inputValue = Forms.INPUT == 'from' ? fromInput.value : toInput.value;
   const weight = Weight.convert(inputValue, Unit.INPUT, Unit.OUTPUT);
   return weight;
 };
 
+// Returns outputTarget according to user input target
 const outputTarget = () => {
   if (Forms.OUTPUT == 'from') {
     return fromInput;
@@ -102,11 +111,13 @@ const outputTarget = () => {
   }
 };
 
+// Set the values
 const setValues = (e) => {
   setUnits(e);
   outputTarget().value = getWeight();
 };
 
+// Sets event listeners
 const setEventListeners = () => {
   fromInput.oninput = e => setValues(e);
   toInput.oninput = e => setValues(e);
@@ -126,4 +137,5 @@ const setEventListeners = () => {
   });
 }
 
+// Window's onload, adding event listeners to the elements
 window.onload = setEventListeners;
