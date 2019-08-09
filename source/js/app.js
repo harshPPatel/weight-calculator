@@ -1,5 +1,3 @@
-// import Weight from './Weight';
-
 const fromForm = document.getElementById('--js-from-form');
 const toForm = document.getElementById('--js-to-form');
 const fromInput = document.getElementById('from_input');

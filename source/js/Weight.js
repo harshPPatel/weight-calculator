@@ -30,5 +30,3 @@ class Weight {
     else if (outputUnit == Units.OZ) return parseInt(value);
   }
 }
-
-// export default Weight;
