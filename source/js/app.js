@@ -110,6 +110,8 @@ const setValues = (e) => {
 const setEventListeners = () => {
   fromInput.oninput = e => setValues(e);
   toInput.oninput = e => setValues(e);
+  fromInput.onclick = (e) => e.target.select();
+  toInput.onclick = (e) => e.target.select();
   fromForm.elements['from_units'].forEach(radio => {
     radio.addEventListener('change', e => {
       updateUnits(e, fromForm);
