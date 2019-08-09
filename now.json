@@ -1,0 +1,12 @@
+{
+  "name": "weight-calculator",
+  "version": 2,
+  "builds": [
+    {
+      "src": "public/**",
+      "use": "@now/static"
+    }
+  ],
+  "routes": [{ "src": "/(.*)", "dest": "public/$1" }],
+  "alias": ["weight-calculator.now.sh"]
+}
