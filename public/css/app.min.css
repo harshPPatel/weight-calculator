@@ -137,6 +137,11 @@ body {
   position: relative;
   z-index: 100; }
 
+footer {
+  position: absolute;
+  bottom: 16px;
+  right: 16px; }
+
 header,
 main {
   max-width: 1120px;
