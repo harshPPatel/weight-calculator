@@ -16,6 +16,10 @@ form {
     border-radius: 3px;
     margin-bottom: 10px;
 
+    @media (max-width: 768px) {
+      margin-top: 40px;
+    }
+
     &:focus {
       box-shadow: 0 3px 6px rgba(black, 0.16);
     }
@@ -71,5 +75,10 @@ form {
     font-size: 20px;
     cursor: pointer;
     transition: all 0.2s ease;
+    @media (max-width: 768px) {
+      height: 60px;
+      width: 60px;
+      line-height: 54px;
+    }
   }
 }

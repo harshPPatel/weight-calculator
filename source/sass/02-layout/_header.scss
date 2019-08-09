@@ -1,6 +1,12 @@
 header {
   padding: 20px 0;
 
+  @media (max-width: 768px) {
+    .logo {
+      padding-left: 50px!important;
+    }
+  }
+
   .logo {
     display: inline-flex;
     align-items: center;
